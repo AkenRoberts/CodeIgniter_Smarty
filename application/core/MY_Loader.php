@@ -1,8 +1,12 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * MY_Loader class extends the core CI_Loader class,
+ * MY_Loader class extends the core CI_Loader class.
+ *
+ * @author	Eric 'Aken' Roberts <eric@cryode.com> 
+ * @link	https://github.com/cryode/CodeIgniter_Smarty
  */
+ 
 class MY_Loader extends CI_Loader {
 	
 	/**

@@ -1,12 +1,16 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-// Require the Smarty class from our third_party directory.
-require_once APPPATH . 'third_party/Smarty/Smarty.class.php';
-
 /**
  * Smartytpl library. Extends default Smarty class
  * for easy integration into CodeIgniter.
+ *
+ * @author	Eric 'Aken' Roberts <eric@cryode.com> 
+ * @link	https://github.com/cryode/CodeIgniter_Smarty
  */
+
+// Require the Smarty class from our third_party directory.
+require_once APPPATH . 'third_party/Smarty/Smarty.class.php';
+ 
 class Smartytpl extends Smarty {
 
 	/**
