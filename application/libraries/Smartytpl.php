@@ -19,11 +19,19 @@ class Smartytpl extends Smarty {
 	{
 		parent::__construct();
 		
+		// Get CodeIgniter super object.
+		$CI =& get_instance();
+		
+		// Get Smarty config items.
+		$CI->load->config('smarty/smarty_settings');
+		
 		// Set appropriate paths.
-		$this->template_dir = APPPATH . 'views/';
-		$this->compile_dir = APPPATH . 'cache/smarty/compiled/';
-		$this->cache_dir = APPPATH . 'cache/smarty/cached/';
-		$this->config_dir = APPPATH . 'third_party/Smarty/configs/';
+		$this->template_dir = $CI->config->item('smarty_template_dir');
+		$this->compile_dir = $CI->config->item('smarty_compile_dir');
+		
+		// These are ignored for now until I do more testing and code them properly. :)
+		//$this->cache_dir = APPPATH . 'cache/smarty/cached/';
+		//$this->config_dir = APPPATH . 'third_party/Smarty/configs/';
 	}
 	
 	// ------------------------------------------------------------------------------
