@@ -8,5 +8,5 @@ do not assume it is ready for a production environment!
 Give me a little time to clean it up, and I'll be sure to spread it around
 once I'm done. :) Cheers!
 
-~ Eric 'Aken' Roberts
+~ Eric 'Aken' Roberts  
 ~ http://www.cryode.com
