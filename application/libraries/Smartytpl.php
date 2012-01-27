@@ -30,12 +30,12 @@ class Smartytpl extends Smarty {
 		$CI->load->config('smarty/smarty_settings');
 		
 		// Set appropriate paths.
-		$this->template_dir = $CI->config->item('smarty_template_dir');
-		$this->compile_dir = $CI->config->item('smarty_compile_dir');
+		$this->setTemplateDir($CI->config->item('smarty_template_dir'));
+		$this->setCompileDir($CI->config->item('smarty_compile_dir'));
 		
-		// These are ignored for now until I do more testing and code them properly. :)
-		//$this->cache_dir = APPPATH . 'cache/smarty/cached/';
-		//$this->config_dir = APPPATH . 'third_party/Smarty/configs/';
+		// TO DO:
+		// $this->setCacheDir();
+		// $this->setConfigDir();
 	}
 	
 	// ------------------------------------------------------------------------------
