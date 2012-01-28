@@ -1,12 +1,12 @@
 # CodeIgniter + Smarty
 
-**Use Smarty in your CodeIgniter application!**
+**Add Smarty to your CodeIgniter application!**
 
 ## Installation
 
 1.	**Copy Files & Directories**  
 	Copy the contents of the application folder to your own application folder,
-	whatever you may have named it. Smarty 3.1.7 is included, so you do not need
+	whatever you may have named it. Smarty v3.1.7 is included, so you do not need
 	to download it separately.
 
 2.	**Check Config Settings**  
@@ -22,12 +22,6 @@
 	instead of PHP tags.
 	
 	`<?php echo $item; ?>` would become `{$item}`
-
-## Warnings
-
-1.	The core Loader file is extended with a `MY_Loader.php` file, and the `view()`
-	method is replaced. If you have previously created a `MY_Loader` file with your
-	own changes, you will need to merge the two files together.
 
 ## What is Smarty?
 
