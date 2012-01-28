@@ -6,13 +6,14 @@
 
 1.	**Copy Files & Directories**  
 	Copy the contents of the application folder to your own application folder,
-	whatever you may have named it.
+	whatever you may have named it. Smarty v3.1.7 is included, so you do not need
+	to download it separately.
 
 2.	**Check Config Settings**  
 	Check the settings located in `application/config/smarty/smarty_settings.php`.
 	The default settings work out of the box, but can be adjusted to your liking.
 
-3.	**Set Compile Directory to Writeable**  
+3.	**Add Write Permissions to Compile Directory**  
 	Make sure your server has permission to write to the Smarty compile directory
 	(usually CHMOD 755 or 777 on non-Windows servers).
 
@@ -20,7 +21,7 @@
 	If you have existing view files, you'll want to update them to use Smarty syntax
 	instead of PHP tags.
 	
-	`<?php echo $item; ?>` becomes `{$item}`
+	`<?php echo $item; ?>` would become `{$item}`
 
 ## What is Smarty?
 
