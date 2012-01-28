@@ -1,12 +1,17 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-// Require the Smarty class from our third_party directory.
-require_once APPPATH . 'third_party/Smarty/Smarty.class.php';
-
 /**
  * Smartytpl library. Extends default Smarty class
  * for easy integration into CodeIgniter.
+ *
+ * @author	Eric 'Aken' Roberts <eric@cryode.com> 
+ * @link	https://github.com/cryode/CodeIgniter_Smarty
+ * @version	1.0.0
  */
+
+// Require the Smarty class from our third_party directory.
+require_once APPPATH . 'third_party/Smarty/Smarty.class.php';
+ 
 class Smartytpl extends Smarty {
 
 	/**
@@ -19,11 +24,19 @@ class Smartytpl extends Smarty {
 	{
 		parent::__construct();
 		
+		// Get CodeIgniter super object.
+		$CI =& get_instance();
+		
+		// Get Smarty config items.
+		$CI->load->config('smarty/smarty_settings');
+		
 		// Set appropriate paths.
-		$this->template_dir = APPPATH . 'views/';
-		$this->compile_dir = APPPATH . 'cache/smarty/compiled/';
-		$this->cache_dir = APPPATH . 'cache/smarty/cached/';
-		$this->config_dir = APPPATH . 'third_party/Smarty/configs/';
+		$this->setTemplateDir($CI->config->item('smarty_template_dir'));
+		$this->setCompileDir($CI->config->item('smarty_compile_dir'));
+		
+		// TO DO:
+		// $this->setCacheDir();
+		// $this->setConfigDir();
 	}
 	
 	// ------------------------------------------------------------------------------

@@ -1,8 +1,13 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * MY_Loader class extends the core CI_Loader class,
+ * MY_Loader class extends the core CI_Loader class.
+ *
+ * @author	Eric 'Aken' Roberts <eric@cryode.com> 
+ * @link	https://github.com/cryode/CodeIgniter_Smarty
+ * @version	1.0.0
  */
+ 
 class MY_Loader extends CI_Loader {
 	
 	/**
@@ -20,9 +25,23 @@ class MY_Loader extends CI_Loader {
 	 */
 	public function view($template, $data = array(), $return = false)
 	{
-		// Get the CI super object and load the related library.
+		// Get the CI super object, load related library.
 		$CI =& get_instance();
 		$CI->load->library('smartytpl');
+		
+		// Add extension to the filename if it's not there.
+		$ext = '.' . $CI->config->item('smarty_template_ext');
+		
+		if (substr($template, -strlen($ext)) !== $ext)
+		{
+			$template .= $ext;
+		}
+		
+		// Make sure the file exists first.
+		if ( ! $CI->smartytpl->templateExists($template))
+		{
+			show_error('Unable to load the template file: ' . $template);
+		}
 		
 		// Assign any variables from the $data array.
 		$CI->smartytpl->assign_variables($data);
@@ -30,18 +49,20 @@ class MY_Loader extends CI_Loader {
 		// Assign CI instance to be available in templates as $ci
 		$CI->smartytpl->assignByRef('ci', $CI);
 		
-		// Add extension to filename.
-		if (substr($template, -4) !== '.php')
-		{
-			$template .= '.php';
-		}
-		
+		/*
+			Smarty has two built-in functions to rendering templates: display() 
+			and fetch(). We're going to	use only fetch(), since we want to take
+			the template contents and either return them or add them to
+			CodeIgniter's output class. This lets us optionally take advantage
+			of some of CI's built-in output features.
+		*/
+			
 		$output = $CI->smartytpl->fetch($template);
 		
-		// Return the output if we set the return value to true.
+		// Return the output if the return value is TRUE.
 		if ($return === true) return $output;
 		
-		// Otherwise add to the final output just like a view.
+		// Otherwise append to output just like a view.
 		$CI->output->append_output($output);
 	}
 
