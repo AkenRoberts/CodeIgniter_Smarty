@@ -2,6 +2,8 @@
 
 **Add Smarty to your CodeIgniter application!**
 
+By Eric "Aken" Roberts - [Cryode Web Studio][1]
+
 ## Installation
 
 1.	**Copy Files & Directories**  
@@ -25,15 +27,27 @@
 
 ## Warnings
 
-1.	The core Loader file is extended with a `MY_Loader.php` file, and the `view()`
+*	The use of PHP tags/code in Smarty template files has been completely removed as of
+	Smarty 3.1.0. Any PHP code will be automatically removed when rendered. You'll
+	need to update your existing views to use Smarty syntax.
+
+*	The core Loader file is extended with a `MY_Loader.php` file, and the `view()`
 	method is replaced. If you have previously created a `MY_Loader` file with your
 	own changes, you will need to merge the two files together.
 
+## Support
+
+I'll provide limited support for installation/use if needed. If you find a bug or
+problem with the code, create an Issue or contact me.
+
+Feature requests are accepted and encouraged. Create a pull request if you're feeling
+frisky!
+
 ## What is Smarty?
 
-[Smarty][1] is a PHP template engine. In CodeIgniter, it provides a cleaner syntax and 
+[Smarty][2] is a PHP template engine. In CodeIgniter, it provides a cleaner syntax and 
 additional features for your view files. For information about Smarty and how to use it, 
-please see [Smarty's Documentation][2].
+please see [Smarty's Documentation][3].
 
 ## Change Log
 
@@ -41,5 +55,6 @@ please see [Smarty's Documentation][2].
 
 Initial release.
 
-[1]: http://www.smarty.net
-[2]: http://www.smarty.net/docs/en/
+[1]: http://www.cryode.com
+[2]: http://www.smarty.net
+[3]: http://www.smarty.net/docs/en/
