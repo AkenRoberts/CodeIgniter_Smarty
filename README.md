@@ -37,8 +37,10 @@ By Eric "Aken" Roberts - [Cryode Web Studio][1]
 
 ## Support
 
-I'll provide limited support for installation/use if needed. If you find a bug or
-problem with the code, create an Issue or contact me.
+I'll provide limited support for installation/use if needed. Please check the
+[CodeIgniter Forum Thread][4] before contacting me, in case your question has already
+been covered. If you find a bug or problem with the code, create an Issue here on
+Github or contact me.
 
 Feature requests are accepted and encouraged. Create a pull request if you're feeling
 frisky!
