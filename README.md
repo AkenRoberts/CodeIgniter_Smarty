@@ -60,4 +60,4 @@ Initial release.
 [1]: http://www.cryode.com
 [2]: http://www.smarty.net
 [3]: http://www.smarty.net/docs/en/
-[4]: http://codeigniter.com/forums/viewthread/209901/
+[4]: http://ellislab.com/forums/viewthread/209901/
