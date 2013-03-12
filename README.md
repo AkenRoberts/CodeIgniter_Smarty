@@ -63,8 +63,8 @@ the GNU lesser general public license. See included license docs for more info.
 
 - Smarty updated to version 3.1.13
 - New auto-escape variables feature
-- CI 3.0 `VIEWPATH` constant used, when available
 - `$ci` global var changed to `$CI`
+- CI 3.0 `VIEWPATH` constant used, when available
 - Licensed properly!
 
 ### 1.0.0 - Jan 27, 2012
