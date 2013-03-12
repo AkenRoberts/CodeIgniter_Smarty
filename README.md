@@ -2,13 +2,13 @@
 
 **Add Smarty to your CodeIgniter application!**
 
-By Eric "Aken" Roberts - [Cryode Web Studio][1]
+By Eric "Aken" Roberts - [Cryode.com][1]
 
 ## Installation
 
 1.	**Copy Files & Directories**  
 	Copy the contents of the application folder to your own application folder,
-	whatever you may have named it. Smarty 3.1.7 is included, so you do not need
+	whatever you may have named it. Smarty 3.1.13 is included, so you do not need
 	to download it separately.
 
 2.	**Check Config Settings**  
@@ -51,7 +51,21 @@ frisky!
 additional features for your view files. For information about Smarty and how to use it, 
 please see [Smarty's Documentation][3].
 
+## License
+
+Smarty integration is copyright (c) 2013 by Eric Roberts, and is open source under the
+MIT license. Smarty is copyright (c) New Digital Group, Inc., and is released under
+the GNU lesser general public license. See included license docs for more info.
+
 ## Change Log
+
+### 1.1.0 - March 12, 2013
+
+- Smarty updated to version 3.1.13
+- New auto-escape variables feature
+- CI 3.0 `VIEWPATH` constant used, when available
+- `$ci` global var changed to `$CI`
+- Licensed properly!
 
 ### 1.0.0 - Jan 27, 2012
 
