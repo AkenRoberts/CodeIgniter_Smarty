@@ -6,7 +6,7 @@
  *
  * @author  Eric 'Aken' Roberts <eric@cryode.com>
  * @link    https://github.com/cryode/CodeIgniter_Smarty
- * @version 1.0.0
+ * @version 1.1.0
  * @license MIT
  */
 

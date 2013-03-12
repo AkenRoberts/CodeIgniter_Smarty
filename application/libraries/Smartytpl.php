@@ -4,9 +4,9 @@
  * Smartytpl library. Extends default Smarty class
  * for easy integration into CodeIgniter.
  *
- * @author	Eric 'Aken' Roberts <eric@cryode.com>
- * @link	https://github.com/cryode/CodeIgniter_Smarty
- * @version	1.0.0
+ * @author  Eric 'Aken' Roberts <eric@cryode.com>
+ * @link    https://github.com/cryode/CodeIgniter_Smarty
+ * @version 1.1.0
  * @license MIT
  */
 
