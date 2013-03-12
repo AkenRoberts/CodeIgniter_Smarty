@@ -6,23 +6,23 @@ By Eric "Aken" Roberts - [Cryode.com][1]
 
 ## Installation
 
-1.	**Copy Files & Directories**  
+1.	**Copy Files & Directories**
 	Copy the contents of the application folder to your own application folder,
 	whatever you may have named it. Smarty 3.1.13 is included, so you do not need
 	to download it separately.
 
-2.	**Check Config Settings**  
+2.	**Check Config Settings**
 	Check the settings located in `application/config/smarty/smarty_settings.php`.
 	The default settings work out of the box, but can be adjusted to your liking.
 
-3.	**Add Write Permissions to Compile Directory**  
+3.	**Add Write Permissions to Compile Directory**
 	Make sure your server has permission to write to the Smarty compile directory
 	(usually CHMOD 755 or 777 on non-Windows servers).
 
-4.	**Update Any Existing Views**  
+4.	**Update Any Existing Views**
 	If you have existing view files, you'll want to update them to use Smarty syntax
 	instead of PHP tags.
-	
+
 	`<?php echo $item; ?>` would become `{$item}`
 
 ## Warnings
@@ -47,8 +47,8 @@ frisky!
 
 ## What is Smarty?
 
-[Smarty][2] is a PHP template engine. In CodeIgniter, it provides a cleaner syntax and 
-additional features for your view files. For information about Smarty and how to use it, 
+[Smarty][2] is a PHP template engine. In CodeIgniter, it provides a cleaner syntax and
+additional features for your view files. For information about Smarty and how to use it,
 please see [Smarty's Documentation][3].
 
 ## License

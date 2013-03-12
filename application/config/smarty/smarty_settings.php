@@ -4,7 +4,7 @@
  * The following config items are for the integration of
  * the Smarty template parsing system into CodeIgniter.
  *
- * @author  Eric 'Aken' Roberts <eric@cryode.com> 
+ * @author  Eric 'Aken' Roberts <eric@cryode.com>
  * @link    https://github.com/cryode/CodeIgniter_Smarty
  * @version 1.0.0
  * @license MIT
@@ -14,11 +14,11 @@
  * --------------------------------------------------------------------------
  * Template Directory
  * --------------------------------------------------------------------------
- * 
+ *
  * Set the directory where your templates (view files) are located.
  * Most users will not need to change this directory. It is pre-set
  * to CodeIgniter's default views directory.
- * 
+ *
  * The default is a ternary op check to see if the CI 3.0+
  * constant VIEWPATH exists. You can customize this as you see fit.
  *
@@ -31,10 +31,10 @@ $config['smarty_template_dir'] = (defined('VIEWPATH')) ? VIEWPATH : APPPATH . 'v
  * --------------------------------------------------------------------------
  * File Extension
  * --------------------------------------------------------------------------
- * 
+ *
  * Set the file extension of the templates (views) you're
  * using with the Smarty template library.
- * 
+ *
  * Common examples: php, tpl, phtml
  * Default: php
  *
@@ -62,11 +62,11 @@ $config['smarty_compile_dir'] = APPPATH . 'third_party/Smarty/compiled/';
  * --------------------------------------------------------------------------
  * Auto-escape Variables
  * --------------------------------------------------------------------------
- * 
+ *
  * When TRUE, every variables parsed by Smarty will be automatically
  * escaped (via PHP's htmlspecialchars()). If you want to prevent
  * escaping of a variable, use the nofilter flag: {$variable nofilter}
- * 
+ *
  * Default: FALSE
  *
  * @var   boolean

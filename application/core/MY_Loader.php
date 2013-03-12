@@ -3,14 +3,14 @@
 /**
  * MY_Loader class extends the core CI_Loader class.
  *
- * @author	Eric 'Aken' Roberts <eric@cryode.com> 
+ * @author	Eric 'Aken' Roberts <eric@cryode.com>
  * @link	https://github.com/cryode/CodeIgniter_Smarty
  * @version	1.0.0
  * @license MIT
  */
- 
+
 class MY_Loader extends CI_Loader {
-	
+
 	/**
 	 * Replace the default $this->load->view() method
 	 * with our own, so we can use Smarty!
@@ -29,40 +29,47 @@ class MY_Loader extends CI_Loader {
 		// Get the CI super object, load related library.
 		$CI =& get_instance();
 		$CI->load->library('smartytpl');
-		
+
 		// Add extension to the filename if it's not there.
 		$ext = '.' . ltrim($CI->config->item('smarty_template_ext'), '.');
-		
+
 		if (substr($template, -strlen($ext)) !== $ext)
 		{
 			$template .= $ext;
 		}
-		
+
 		// Make sure the file exists first.
 		if ( ! $CI->smartytpl->templateExists($template))
 		{
 			show_error('Unable to load the template file: ' . $template);
 		}
-		
+
 		// Assign any variables from the $data array.
 		$CI->smartytpl->assign_variables($data);
-		
+
 		/*
-			Smarty has two built-in functions to rendering templates: display() 
+			Smarty has two built-in functions to rendering templates: display()
 			and fetch(). We're going to	use only fetch(), since we want to take
 			the template contents and either return them or add them to
 			CodeIgniter's output class. This lets us optionally take advantage
 			of some of CI's built-in output features.
 		*/
-			
-		$output = $CI->smartytpl->fetch($template);
-		
+
+		try
+		{
+			$output = $CI->smartytpl->fetch($template);
+		}
+		catch (Exception $e)
+		{
+			show_error(htmlspecialchars_decode($e->getMessage()), 500, 'Smarty Exception');
+		}
+
 		// Return the output if the return value is TRUE.
 		if ($return === TRUE)
 		{
 			return $output;
 		}
-		
+
 		// Otherwise append to output just like a view.
 		$CI->output->append_output($output);
 	}
