@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * MY_Loader class extends the core CI_Loader class.
@@ -6,6 +6,7 @@
  * @author	Eric 'Aken' Roberts <eric@cryode.com> 
  * @link	https://github.com/cryode/CodeIgniter_Smarty
  * @version	1.0.0
+ * @license MIT
  */
  
 class MY_Loader extends CI_Loader {
@@ -23,14 +24,14 @@ class MY_Loader extends CI_Loader {
 	 * @param	bool	Set to TRUE to return the loaded template as a string.
 	 * @return	mixed	If $return is TRUE, returns string. If not, returns void.
 	 */
-	public function view($template, $data = array(), $return = false)
+	public function view($template, $data = array(), $return = FALSE)
 	{
 		// Get the CI super object, load related library.
 		$CI =& get_instance();
 		$CI->load->library('smartytpl');
 		
 		// Add extension to the filename if it's not there.
-		$ext = '.' . $CI->config->item('smarty_template_ext');
+		$ext = '.' . ltrim($CI->config->item('smarty_template_ext'), '.');
 		
 		if (substr($template, -strlen($ext)) !== $ext)
 		{
@@ -46,9 +47,6 @@ class MY_Loader extends CI_Loader {
 		// Assign any variables from the $data array.
 		$CI->smartytpl->assign_variables($data);
 		
-		// Assign CI instance to be available in templates as $ci
-		$CI->smartytpl->assignByRef('ci', $CI);
-		
 		/*
 			Smarty has two built-in functions to rendering templates: display() 
 			and fetch(). We're going to	use only fetch(), since we want to take
@@ -60,10 +58,16 @@ class MY_Loader extends CI_Loader {
 		$output = $CI->smartytpl->fetch($template);
 		
 		// Return the output if the return value is TRUE.
-		if ($return === true) return $output;
+		if ($return === TRUE)
+		{
+			return $output;
+		}
 		
 		// Otherwise append to output just like a view.
 		$CI->output->append_output($output);
 	}
-
 }
+
+
+/* End of file Loader.php */
+/* Location: ./application/core/Loader.php */

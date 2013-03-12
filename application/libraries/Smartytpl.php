@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * Smartytpl library. Extends default Smarty class
@@ -7,6 +7,7 @@
  * @author	Eric 'Aken' Roberts <eric@cryode.com> 
  * @link	https://github.com/cryode/CodeIgniter_Smarty
  * @version	1.0.0
+ * @license MIT
  */
 
 // Require the Smarty class from our third_party directory.
@@ -33,10 +34,15 @@ class Smartytpl extends Smarty {
 		// Set appropriate paths.
 		$this->setTemplateDir($CI->config->item('smarty_template_dir'));
 		$this->setCompileDir($CI->config->item('smarty_compile_dir'));
+
+		// Auto-escape variables?
+		if ($CI->config->item('smarty_auto_escape_vars'))
+		{
+			$this->escape_html = TRUE;
+		}
 		
-		// TO DO:
-		// $this->setCacheDir();
-		// $this->setConfigDir();
+		// Assign CI instance to be available in templates as $ci
+		$this->assignByRef('CI', $CI);
 	}
 	
 	// ------------------------------------------------------------------------------
@@ -49,11 +55,11 @@ class Smartytpl extends Smarty {
 	{
 		if (is_array($variables))
 		{
-			foreach ($variables as $name => $val)
-			{
-				$this->assign($name, $val);
-			}
+			$this->assign($variables);
 		}
 	}
-
 }
+
+
+/* End of file Smartytpl.php */
+/* Location: ./application/libraries/Smartytpl.php */
